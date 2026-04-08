@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { useState } from "react";
 import { authStyles } from "../styles/authStyles";
 import { registerUser } from "../services/authService";
@@ -44,70 +44,72 @@ export default function RegisterScreen({ navigation }) {
 
   return (
     <View style={authStyles.container}>
-      <Text style={authStyles.title}>Create Account</Text>
-      <Text style={authStyles.subtitle}>Register to continue</Text>
+      <View style={authStyles.innerContainer}>
+        {/* 🔥 LOGO */}
+        <Image source={require("../assets/logo.png")} style={authStyles.logo} />
 
-      {/* Name */}
-      <TextInput
-        placeholder="Full Name"
-        value={name}
-        onChangeText={(text) => {
-          setName(text);
-          setErrors((prev) => ({ ...prev, name: "" }));
-        }}
-        style={authStyles.input}
-      />
-      {errors.name ? (
-        <Text style={{ color: "red", marginBottom: 8 }}>
-          {errors.name}
+        {/* TITLE */}
+        <Text style={authStyles.loginTitle}>Register</Text>
+        <Text style={authStyles.subtitle}>Create your account</Text>
+
+        {/* Name */}
+        <TextInput
+          placeholder="Full Name"
+          value={name}
+          onChangeText={(text) => {
+            setName(text);
+            setErrors((prev) => ({ ...prev, name: "" }));
+          }}
+          style={authStyles.input}
+        />
+        {errors.name ? (
+          <Text style={{ color: "red", marginBottom: 8 }}>{errors.name}</Text>
+        ) : null}
+
+        {/* Email */}
+        <TextInput
+          placeholder="Email"
+          value={email}
+          onChangeText={(text) => {
+            setEmail(text);
+            setErrors((prev) => ({ ...prev, email: "" }));
+          }}
+          style={authStyles.input}
+        />
+        {errors.email ? (
+          <Text style={{ color: "red", marginBottom: 8 }}>{errors.email}</Text>
+        ) : null}
+
+        {/* Password */}
+        <TextInput
+          placeholder="Password"
+          secureTextEntry
+          value={password}
+          onChangeText={(text) => {
+            setPassword(text);
+            setErrors((prev) => ({ ...prev, password: "" }));
+          }}
+          style={authStyles.input}
+        />
+        {errors.password ? (
+          <Text style={{ color: "red", marginBottom: 8 }}>
+            {errors.password}
+          </Text>
+        ) : null}
+
+        {/* Button */}
+        <TouchableOpacity style={authStyles.button} onPress={handleRegister}>
+          <Text style={authStyles.buttonText}>REGISTER</Text>
+        </TouchableOpacity>
+
+        {/* Login Link */}
+        <Text
+          style={authStyles.link}
+          onPress={() => navigation.navigate("Login")}
+        >
+          Already have an account? Login
         </Text>
-      ) : null}
-
-      {/* Email */}
-      <TextInput
-        placeholder="Email"
-        value={email}
-        onChangeText={(text) => {
-          setEmail(text);
-          setErrors((prev) => ({ ...prev, email: "" }));
-        }}
-        style={authStyles.input}
-      />
-      {errors.email ? (
-        <Text style={{ color: "red", marginBottom: 8 }}>
-          {errors.email}
-        </Text>
-      ) : null}
-
-      {/* Password */}
-      <TextInput
-        placeholder="Password"
-        secureTextEntry
-        value={password}
-        onChangeText={(text) => {
-          setPassword(text);
-          setErrors((prev) => ({ ...prev, password: "" }));
-        }}
-        style={authStyles.input}
-      />
-      {errors.password ? (
-        <Text style={{ color: "red", marginBottom: 8 }}>
-          {errors.password}
-        </Text>
-      ) : null}
-
-      {/* Button */}
-      <TouchableOpacity style={authStyles.button} onPress={handleRegister}>
-        <Text style={authStyles.buttonText}>REGISTER</Text>
-      </TouchableOpacity>
-
-      {/* Login Link */}
-      <Text
-        style={authStyles.link}
-        onPress={() => navigation.navigate("Login")}
-      >
-        Already have an account? Login
-      </Text>
+      </View>
     </View>
   );
 }
