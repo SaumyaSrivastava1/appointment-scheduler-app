@@ -1,50 +1,85 @@
-# Welcome to your Expo app 👋
+# 🚀 Scheduler App (React Native - Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern **React Native Scheduler App** built with Expo that allows users to book appointments with service providers like doctors, salons, and fitness trainers.
 
-## Get started
+---
 
-1. Install dependencies
+### 📌 Project Objective
 
-   ```bash
-   npm install
-   ```
+The objective of this project is to develop a **React Native mobile application** that allows users to book appointments with service providers efficiently.
 
-2. Start the app
+The application provides an intuitive interface for users to:
 
-   ```bash
-   npx expo start
-   ```
+* Browse service providers
+* View available time slots
+* Schedule and manage appointments seamlessly
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## ✨ Key Features
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 🔐 User Authentication
 
-## Get a fresh project
+* User registration and login functionality
+* Session handling using local storage (mock authentication)
 
-When you're ready, run:
+### 👩‍⚕️ Service Provider Listing
 
-```bash
-npm run reset-project
-```
+* Display list of providers with:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+  * Name
+  * Category
+  * Profile image
+* View detailed provider information
 
-## Learn more
+### 📅 Appointment Scheduling
 
-To learn more about developing your project with Expo, look at the following resources:
+* Select a provider
+* Choose available time slots
+* Book appointments easily
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 📋 Appointment Management
 
-## Join the community
+* View upcoming appointments
+* Cancel bookings when needed
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## ⚙️ Technical Implementation
+
+* Built using **React Native (Expo)**
+* Modular and scalable folder structure
+* Clean and maintainable code practices
+* State managed using React Hooks
+* Mock data used for authentication and booking logic
+
+---
+
+## 📦 Assumptions
+
+* No backend is used; data is handled locally
+* Time slots are predefined
+* Authentication is simulated using local storage
+* Internet connection is not required for core functionality
+
+---
+
+## 🛠 Tools & Libraries Used
+
+* React Native (Expo)
+* React Navigation
+* AsyncStorage (for local data persistence)
+* JavaScript (ES6+)
+
+---
+
+## 📱 APK (For Testing)
+
+https://drive.google.com/file/d/1-x0zM5WACBmr_edAd0clAHXynpw0iVzh/view?usp=sharing
+---
+
+## 📝 Submission Includes
+
+* ✅ Source Code
+* ✅ README Documentation
+* ✅ APK File
